@@ -34,7 +34,7 @@ def webhook2():
             chat_id = chat.get('id')
 
             text = message.get('text')
-            if text and text == '/draw':
+            if text and '/draw' in text:
                 result = random.sample(range(1, 11), 1)
                 requests.get(f'{api_url}/bot{token}/sendMessage?chat_id={chat_id}'
                              f'&text={last_name}{first_name} : {result}')
